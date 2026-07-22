@@ -9,10 +9,12 @@
     "local"
   ],
   "name": {
-    "en": "GoodWe XS"
+    "en": "GoodWe 2500-XS",
+    "nl": "GoodWe 2500-XS"
   },
   "description": {
-    "en": "Monitor your GoodWe XS inverter over Modbus TCP using the WiFi/LAN Kit 2.0."
+    "en": "Monitor your GoodWe 2500-XS inverter using Modbus TCP via the GoodWe WiFi/LAN Kit 2.0.",
+    "nl": "Monitor je GoodWe 2500-XS omvormer via Modbus TCP met de WiFi/LAN Kit 2.0."
   },
   "category": [
     "energy"
@@ -24,7 +26,23 @@
     "xlarge": "/assets/images/xlarge.png"
   },
   "author": {
-    "name": "Dennis Gouw",
+    "name": "Dennux",
     "email": "dennis@dennux.nl"
-  }
+  },
+  "drivers": [
+    {
+      "name": {
+        "en": "GoodWe 2500-XS",
+        "nl": "GoodWe 2500-XS"
+      },
+      "class": "solarpanel",
+      "platforms": [
+        "local"
+      ],
+      "capabilities": [
+        "measure_power"
+      ],
+      "id": "goodwe-xs"
+    }
+  ]
 }

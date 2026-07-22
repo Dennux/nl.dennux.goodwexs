@@ -1,0 +1,13 @@
+{
+  "name": {
+    "en": "GoodWe 2500-XS",
+    "nl": "GoodWe 2500-XS"
+  },
+  "class": "solarpanel",
+  "platforms": [
+    "local"
+  ],
+  "capabilities": [
+    "measure_power"
+  ]
+}
