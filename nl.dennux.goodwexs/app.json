@@ -45,6 +45,17 @@
       "pair": [
         {
           "id": "network"
+        },
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_devices"
+          }
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
         }
       ],
       "id": "goodwe-xs",

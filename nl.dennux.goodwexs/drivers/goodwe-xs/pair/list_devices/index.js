@@ -1,0 +1,3 @@
+'use strict';
+
+Homey.ready();

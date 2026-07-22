@@ -6,7 +6,10 @@ const IPV4_REGEX =
 const DEFAULT_PORT = 502;
 const DEFAULT_UNIT_ID = 247;
 
-initialize();
+
+
+    initialize();
+
 
 async function initialize() {
 
@@ -68,7 +71,12 @@ async function onNext() {
     clearErrors();
 
     try {
-        await Homey.emit('testConnection', data);
+        const result = await Homey.emit('testConnection', data);
+
+        console.log('Connection result:', result);
+
+      //   Homey.done();
+            await Homey.showView('list_devices');
     }
     catch (error) {
         Homey.alert(error.message);
