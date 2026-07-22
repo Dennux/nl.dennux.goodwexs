@@ -1,0 +1,139 @@
+[
+  {
+    "type": "group",
+    "label": {
+      "en": "Connection",
+      "nl": "Verbinding"
+    },
+    "children": [
+      {
+        "id": "ip",
+        "type": "text",
+        "label": {
+          "en": "IP Address",
+          "nl": "IP-adres"
+        },
+        "value": "",
+        "hint": {
+          "en": "IP address of the GoodWe inverter.",
+          "nl": "IP-adres van de GoodWe omvormer."
+        }
+      },
+      {
+        "id": "port",
+        "type": "number",
+        "label": {
+          "en": "TCP Port",
+          "nl": "TCP-poort"
+        },
+        "value": 502,
+        "min": 1,
+        "max": 65535
+      },
+      {
+        "id": "unitId",
+        "type": "number",
+        "label": {
+          "en": "Modbus Unit ID",
+          "nl": "Modbus Unit ID"
+        },
+        "value": 247,
+        "min": 1,
+        "max": 255
+      }
+    ]
+  },
+  {
+    "type": "group",
+    "label": {
+      "en": "Communication",
+      "nl": "Communicatie"
+    },
+    "children": [
+      {
+        "id": "pollInterval",
+        "type": "dropdown",
+        "label": {
+          "en": "Poll Interval",
+          "nl": "Poll-interval"
+        },
+        "value": "10",
+        "values": [
+          {
+            "id": "10",
+            "label": {
+              "en": "10 seconds",
+              "nl": "10 seconden"
+            }
+          },
+          {
+            "id": "30",
+            "label": {
+              "en": "30 seconds",
+              "nl": "30 seconden"
+            }
+          },
+          {
+            "id": "60",
+            "label": {
+              "en": "60 seconds",
+              "nl": "60 seconden"
+            }
+          },
+          {
+            "id": "120",
+            "label": {
+              "en": "2 minutes",
+              "nl": "2 minuten"
+            }
+          },
+          {
+            "id": "300",
+            "label": {
+              "en": "5 minutes",
+              "nl": "5 minuten"
+            }
+          }
+        ]
+      },
+      {
+        "id": "timeout",
+        "type": "number",
+        "label": {
+          "en": "Request Timeout",
+          "nl": "Time-out"
+        },
+        "value": 5000,
+        "units": {
+          "en": "ms",
+          "nl": "ms"
+        },
+        "min": 1000,
+        "max": 30000,
+        "step": 500
+      }
+    ]
+  },
+  {
+    "type": "group",
+    "label": {
+      "en": "Diagnostics",
+      "nl": "Diagnostiek"
+    },
+    "children": [
+      {
+        "id": "debug",
+        "type": "checkbox",
+        "label": {
+          "en": "Enable debug logging",
+          "nl": "Debug logging inschakelen"
+        },
+        "value": false,
+        "hint": {
+          "en": "Enable additional logging for troubleshooting.",
+          "nl": "Schakel extra logging in voor probleemoplossing."
+        }
+      }
+    ]
+  }
+]

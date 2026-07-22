@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+
+    <title id="pageTitle"></title>
+
+    <link rel="stylesheet" href="network.css">
+    <script src="network.js"></script>
+</head>
+
+<body>
+
+    <header class="homey-header">
+        <h1 id="title" class="homey-title"></h1>
+        <p id="subtitle" class="homey-subtitle"></p>
+    </header>
+
+    <form class="homey-form" autocomplete="off">
+
+        <div class="homey-form-group">
+            <label
+                id="ipLabel"
+                class="homey-form-label"
+                for="ip">
+            </label>
+
+            <input
+                id="ip"
+                class="homey-form-input"
+                type="text"
+                inputmode="decimal"
+                autocomplete="off">
+                <div id="ipError" class="error-message"></div>
+        </div>
+
+        <div class="homey-form-group">
+            <label
+                id="portLabel"
+                class="homey-form-label"
+                for="port">
+            </label>
+
+            <input
+                id="port"
+                class="homey-form-input"
+                type="number"
+                min="1"
+                max="65535">
+                <div id="portError" class="error-message"></div>
+        </div>
+
+        <div class="homey-form-group">
+            <label
+                id="unitIdLabel"
+                class="homey-form-label"
+                for="unitId">
+            </label>
+
+            <input
+                id="unitId"
+                class="homey-form-input"
+                type="number"
+                min="1"
+                max="255">
+                <div id="unitIdError" class="error-message"></div>
+        </div>
+
+        <button
+            id="nextButton"
+            class="homey-button-primary-full"
+            type="button">
+        </button>
+
+    </form>
+
+</body>
+
+</html>

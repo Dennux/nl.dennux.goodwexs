@@ -1,0 +1,21 @@
+{
+    "pair": {
+        "network": {
+            "title": "Verbind GoodWe omvormer",
+            "subtitle": "Voer de Modbus TCP-verbindingsgegevens in.",
+            "ip": "IP-adres",
+            "port": "TCP-poort",
+            "unitId": "Modbus Unit ID",
+            "next": "Volgende",
+            "placeholder": {
+                "ip": "192.168.1.100"
+            },
+            "errors": {
+                "ipRequired": "Vul een IP-adres in.",
+                "invalidIp": "Vul een geldig IPv4-adres in.",
+                "invalidPort": "Voer een geldige TCP-poort in (1 t/m 65535).",
+                "invalidUnitId": "Voer een geldige Modbus Unit ID in (1 t/m 247)."
+            }
+        }
+    }
+}
