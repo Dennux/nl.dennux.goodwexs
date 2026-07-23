@@ -44,7 +44,7 @@ class GoodWeXSDevice extends Homey.Device {
 
     await this.updateIdentification();
 
-    this.startPolling();
+    await this.startPolling();
 
   }
   async updateIdentification() {
@@ -152,14 +152,100 @@ class GoodWeXSDevice extends Homey.Device {
 
   }
 
+ async checkIdentification() {
 
-  startPolling() {
+    if (this.settings.debug) {
 
-    this.updateLiveData();
+        this.log(
+            '[DEBUG] Checking identification age'
+        );
+
+    }
+
+
+    const lastCheck =
+        await this.getStoreValue(
+            'lastIdentificationCheck'
+        );
+
+
+    if (!lastCheck) {
+
+        if (this.settings.debug) {
+
+            this.log(
+                '[DEBUG] No previous identification check found'
+            );
+
+        }
+
+        await this.updateIdentification();
+
+        return;
+    }
+
+
+    const age =
+        Date.now() - new Date(lastCheck).getTime();
+
+
+    const hours =
+        Math.round(
+            age / (1000 * 60 * 60)
+        );
+
+
+    if (this.settings.debug) {
+
+        this.log(
+            `[DEBUG] Last identification check was ${hours} hours ago`
+        );
+
+    }
+
+
+    if (age >= 24 * 60 * 60 * 1000) {
+
+        if (this.settings.debug) {
+
+            this.log(
+                '[DEBUG] Identification check required'
+            );
+
+        }
+
+        await this.updateIdentification();
+
+    } else {
+
+        if (this.settings.debug) {
+
+            this.log(
+                '[DEBUG] Identification check skipped'
+            );
+
+        }
+
+    }
+
+}
+
+
+  async poll() {
+
+    await this.updateLiveData();
+
+    await this.checkIdentification();
+
+  }
+
+  async startPolling() {
+
+    await this.updateLiveData();
 
 
     this.pollTimer = this.homey.setInterval(
-      () => this.updateLiveData(),
+      () => this.poll(),
       this.pollInterval
     );
 
