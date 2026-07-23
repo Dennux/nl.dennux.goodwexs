@@ -59,9 +59,7 @@ class GoodWeXSDevice extends Homey.Device {
 
       }
 
-
       await this.connection.connect();
-
 
       const registers =
         await this.connection.readHoldingRegisters(
@@ -69,9 +67,7 @@ class GoodWeXSDevice extends Homey.Device {
           CONSTANTS.MODBUS.IDENTIFICATION.COUNT
         );
 
-
       await this.connection.disconnect();
-
 
       const identification =
         GoodWeParser.parseIdentification(registers);
@@ -79,14 +75,14 @@ class GoodWeXSDevice extends Homey.Device {
 
       const now = new Date();
 
-const lastUpdated =
-  now.toLocaleString(
-    this.homey.i18n.getLanguage(),
-    {
-      dateStyle: 'short',
-      timeStyle: 'short'
-    }
-  );
+      const lastUpdated =
+        now.toLocaleString(
+          this.homey.i18n.getLanguage(),
+          {
+            dateStyle: 'short',
+            timeStyle: 'short'
+          }
+        );
 
 
       await this.setSettings({
