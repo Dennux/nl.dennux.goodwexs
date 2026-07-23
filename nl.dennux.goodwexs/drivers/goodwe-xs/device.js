@@ -3,8 +3,8 @@
 const Homey = require('homey');
 
 const ModbusClient = require('../../lib/ModbusClient');
-const DEVICE = require('../../lib/GW2500XS_WL20');
-const GoodWeParser = require('../../lib/GoodWeParser');
+const DEVICE = require('./GW2500XS_WL20');
+const GoodWeParser = require('./GoodWeParser');
 const CONSTANTS = require('../../lib/Constants');
 
 
@@ -42,8 +42,117 @@ class GoodWeXSDevice extends Homey.Device {
     this.pollInterval =
       Number(this.settings.pollInterval ?? 10) * 1000;
 
+    await this.updateIdentification();
 
     this.startPolling();
+
+  }
+  async updateIdentification() {
+
+    try {
+
+      if (this.settings.debug) {
+
+        this.log(
+          '[DEBUG] Reading identification data'
+        );
+
+      }
+
+
+      await this.connection.connect();
+
+
+      const registers =
+        await this.connection.readHoldingRegisters(
+          CONSTANTS.MODBUS.IDENTIFICATION.START,
+          CONSTANTS.MODBUS.IDENTIFICATION.COUNT
+        );
+
+
+      await this.connection.disconnect();
+
+
+      const identification =
+        GoodWeParser.parseIdentification(registers);
+
+
+      const now = new Date();
+
+const lastUpdated =
+  now.toLocaleString(
+    this.homey.i18n.getLanguage(),
+    {
+      dateStyle: 'short',
+      timeStyle: 'short'
+    }
+  );
+
+
+      await this.setSettings({
+
+        model:
+          identification.model,
+
+        serialNumber:
+          identification.serialNumber,
+
+        firmware:
+          identification.firmware.version,
+
+        lastUpdated
+
+      });
+
+
+      await this.setStoreValue(
+        'identification',
+        {
+          serialNumber:
+            identification.serialNumber,
+
+          firmware:
+            identification.firmware.version
+        }
+      );
+
+
+      await this.setStoreValue(
+        'lastIdentificationCheck',
+        now.toISOString()
+      );
+
+
+      if (this.settings.debug) {
+
+        this.log(
+          '[DEBUG] Identification updated:',
+          identification
+        );
+
+      }
+
+
+    } catch (error) {
+
+
+      await this.connection.disconnect()
+        .catch(disconnectError => {
+
+          this.error(
+            'Identification disconnect failed:',
+            disconnectError
+          );
+
+        });
+
+
+      this.error(
+        'Failed reading identification:',
+        error
+      );
+
+    }
 
   }
 

@@ -1,8 +1,8 @@
 'use strict';
 
 const DEVICE = require('./GW2500XS_WL20');
-const ParserUtils = require('./ParserUtils');
-const CONSTANTS = require('./Constants');
+const ParserUtils = require('../../lib/ParserUtils');
+const CONSTANTS = require('../../lib/Constants');
 
 
 /*

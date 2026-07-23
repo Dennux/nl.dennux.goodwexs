@@ -115,6 +115,47 @@
     ]
   },
   {
+  "type": "group",
+  "label": {
+    "en": "Device information",
+    "nl": "Apparaatinformatie"
+  },
+  "children": [
+    {
+      "id": "model",
+      "type": "label",
+      "label": {
+        "en": "Model",
+        "nl": "Model"
+      }
+    },
+    {
+      "id": "serialNumber",
+      "type": "label",
+      "label": {
+        "en": "Serial number",
+        "nl": "Serienummer"
+      }
+    },
+    {
+      "id": "firmware",
+      "type": "label",
+      "label": {
+        "en": "Firmware",
+        "nl": "Firmware"
+      }
+    },
+    {
+      "id": "lastUpdated",
+      "type": "label",
+      "label": {
+        "en": "Last updated",
+        "nl": "Laatst vernieuwd"
+      }
+    }
+  ]
+},
+  {
     "type": "group",
     "label": {
       "en": "Diagnostics",

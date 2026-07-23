@@ -3,7 +3,7 @@
 const Homey = require('homey');
 const CONSTANTS = require('../../lib/Constants');
 const ModbusClient = require('../../lib/ModbusClient');
-const GoodWeParser = require('../../lib/GoodWeParser');
+const GoodWeParser = require('./GoodWeParser');
 
 
 function validateConnectionSettings(data) {
