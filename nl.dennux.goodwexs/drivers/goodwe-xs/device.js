@@ -69,8 +69,11 @@ class GoodWeXSDevice extends Homey.Device {
       `${String(now.getDate()).padStart(2, '0')}`;
 
 
-    const dailyYield =
-      data.dailyYield;
+    const dailyYield = data.dailyYield;
+
+    if (typeof dailyYield !== 'number') {
+      return;
+    }
 
 
     let history =

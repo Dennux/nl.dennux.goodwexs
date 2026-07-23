@@ -19,6 +19,7 @@
   "category": [
     "energy"
   ],
+  "brandColor": "#1E88E5",
   "permissions": [],
   "images": {
     "small": "/assets/images/small.png",
@@ -42,6 +43,11 @@
       "connectivity": [
         "lan"
       ],
+      "images": {
+        "small": "/drivers/goodwe-xs/assets/images/small.png",
+        "large": "/drivers/goodwe-xs/assets/images/large.png",
+        "xlarge": "/drivers/goodwe-xs/assets/images/xlarge.png"
+      },
       "capabilities": [
         "measure_power",
         "measure_power.total_input",
@@ -128,6 +134,12 @@
           "units": {
             "en": "mA",
             "nl": "mA"
+          }
+        },
+        "measure_temperature": {
+          "title": {
+            "en": "Inverter temperature",
+            "nl": "Temperatuur omvormer"
           }
         },
         "alarm_generic": {
