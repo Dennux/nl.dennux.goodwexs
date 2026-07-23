@@ -56,9 +56,9 @@ class GoodWeXSDriver extends Homey.Driver {
             const identification =
                 GoodWeParser.parseIdentification(registers);
 
-            if (this.getSettings().debug) {
-                this.log('[DEBUG] Identification:', identification);
-            }
+
+            this.log('[DEBUG] Identification:', identification);
+
 
             return identification;
 
@@ -84,12 +84,12 @@ class GoodWeXSDriver extends Homey.Driver {
                 const identification =
                     await this.getIdentification(data);
 
-                if (this.getSettings().debug) {
-                    this.log(
-                        '[DEBUG] Pair identification:',
-                        identification
-                    );
-                }
+
+                this.log(
+                    '[DEBUG] Pair identification:',
+                    identification
+                );
+
 
 
                 session.setHandler(
