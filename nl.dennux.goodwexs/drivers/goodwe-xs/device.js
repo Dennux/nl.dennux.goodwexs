@@ -76,13 +76,14 @@ class GoodWeXSDevice extends Homey.Device {
       const now = new Date();
 
       const lastUpdated =
-        now.toLocaleString(
-          this.homey.i18n.getLanguage(),
-          {
+    now.toLocaleString(
+        this.homey.i18n.getLanguage(),
+        {
+            timeZone: this.homey.clock.getTimezone(),
             dateStyle: 'short',
             timeStyle: 'short'
-          }
-        );
+        }
+    );
 
 
       await this.setSettings({
@@ -99,6 +100,11 @@ class GoodWeXSDevice extends Homey.Device {
         lastUpdated
 
       });
+
+      this.log(
+    '[DEBUG] New lastUpdated value:',
+    lastUpdated
+);
 
 
       await this.setStoreValue(
