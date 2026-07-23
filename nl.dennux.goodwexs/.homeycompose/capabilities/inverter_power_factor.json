@@ -1,0 +1,12 @@
+{
+  "type": "number",
+  "title": {
+    "en": "Power factor",
+    "nl": "Vermogensfactor"
+  },
+  "decimals": 3,
+  "getable": true,
+  "setable": false,
+  "uiComponent": "sensor",
+  "icon": "/assets/capability-icons/power_factor.svg"
+}

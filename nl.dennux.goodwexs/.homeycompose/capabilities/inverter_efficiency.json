@@ -1,0 +1,16 @@
+{
+  "type": "number",
+  "title": {
+    "en": "Efficiency",
+    "nl": "Omzettingsrendement"
+  },
+  "units": {
+    "en": "%",
+    "nl": "%"
+  },
+  "decimals": 1,
+  "getable": true,
+  "setable": false,
+  "uiComponent": "sensor",
+  "icon": "/assets/capability-icons/efficiency.svg"
+}

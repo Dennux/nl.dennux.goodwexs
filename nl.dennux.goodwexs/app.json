@@ -39,9 +39,107 @@
       "platforms": [
         "local"
       ],
-      "capabilities": [
-        "measure_power"
+      "connectivity": [
+        "lan"
       ],
+      "capabilities": [
+        "measure_power",
+        "measure_power.total_input",
+        "measure_power.apparent",
+        "meter_power",
+        "meter_power.daily",
+        "measure_voltage",
+        "measure_voltage.grid",
+        "measure_current",
+        "measure_current.grid",
+        "measure_current.leakage",
+        "measure_temperature",
+        "inverter_timestamp",
+        "inverter_work_mode",
+        "connection_status",
+        "inverter_efficiency",
+        "inverter_grid_frequency",
+        "inverter_power_factor",
+        "inverter_fault_code",
+        "inverter_operating_hours",
+        "inverter_rssi",
+        "alarm_generic"
+      ],
+      "capabilitiesOptions": {
+        "measure_power": {
+          "title": {
+            "en": "Power to house/grid (AC)",
+            "nl": "Vermogen naar huis/net (AC)"
+          }
+        },
+        "measure_power.total_input": {
+          "title": {
+            "en": "Power from solar panels (DC, roof)",
+            "nl": "Vermogen vanaf zonnepanelen (DC, dak)"
+          }
+        },
+        "measure_power.apparent": {
+          "title": {
+            "en": "Apparent power",
+            "nl": "Schijnbaar vermogen"
+          }
+        },
+        "meter_power": {
+          "title": {
+            "en": "Total yield",
+            "nl": "Totale opbrengst"
+          }
+        },
+        "meter_power.daily": {
+          "title": {
+            "en": "Yield today",
+            "nl": "Opbrengst vandaag"
+          }
+        },
+        "measure_voltage": {
+          "title": {
+            "en": "MPPT-1 voltage",
+            "nl": "MPPT-1-spanning"
+          }
+        },
+        "measure_voltage.grid": {
+          "title": {
+            "en": "Grid voltage",
+            "nl": "Netspanning"
+          }
+        },
+        "measure_current": {
+          "title": {
+            "en": "MPPT-1 current",
+            "nl": "MPPT-1-stroom"
+          }
+        },
+        "measure_current.grid": {
+          "title": {
+            "en": "Grid current",
+            "nl": "Netstroom"
+          }
+        },
+        "measure_current.leakage": {
+          "title": {
+            "en": "Leakage current",
+            "nl": "Lekstroom"
+          },
+          "units": {
+            "en": "mA",
+            "nl": "mA"
+          }
+        },
+        "alarm_generic": {
+          "title": {
+            "en": "Fault",
+            "nl": "Storing"
+          }
+        }
+      },
+      "energy": {
+        "meterPowerExportedCapability": "meter_power"
+      },
       "pair": [
         {
           "id": "network"
@@ -199,5 +297,123 @@
         }
       ]
     }
-  ]
+  ],
+  "capabilities": {
+    "connection_status": {
+      "type": "string",
+      "title": {
+        "en": "Connection status",
+        "nl": "Verbindingsstatus"
+      },
+      "getable": true,
+      "setable": false,
+      "uiComponent": "sensor",
+      "icon": "/assets/capability-icons/connection_status.svg"
+    },
+    "inverter_efficiency": {
+      "type": "number",
+      "title": {
+        "en": "Efficiency",
+        "nl": "Omzettingsrendement"
+      },
+      "units": {
+        "en": "%",
+        "nl": "%"
+      },
+      "decimals": 1,
+      "getable": true,
+      "setable": false,
+      "uiComponent": "sensor",
+      "icon": "/assets/capability-icons/efficiency.svg"
+    },
+    "inverter_fault_code": {
+      "type": "string",
+      "title": {
+        "en": "Fault code",
+        "nl": "Foutcode"
+      },
+      "getable": true,
+      "setable": false,
+      "uiComponent": "sensor",
+      "icon": "/assets/capability-icons/fault_code.svg"
+    },
+    "inverter_grid_frequency": {
+      "type": "number",
+      "title": {
+        "en": "Grid frequency",
+        "nl": "Netfrequentie"
+      },
+      "units": {
+        "en": "Hz",
+        "nl": "Hz"
+      },
+      "decimals": 2,
+      "getable": true,
+      "setable": false,
+      "uiComponent": "sensor",
+      "icon": "/assets/capability-icons/grid_frequency.svg"
+    },
+    "inverter_operating_hours": {
+      "type": "number",
+      "title": {
+        "en": "Total operating hours",
+        "nl": "Totaal bedrijfsuren"
+      },
+      "units": {
+        "en": "h",
+        "nl": "u"
+      },
+      "decimals": 0,
+      "getable": true,
+      "setable": false,
+      "uiComponent": "sensor",
+      "icon": "/assets/capability-icons/operating_hours.svg"
+    },
+    "inverter_power_factor": {
+      "type": "number",
+      "title": {
+        "en": "Power factor",
+        "nl": "Vermogensfactor"
+      },
+      "decimals": 3,
+      "getable": true,
+      "setable": false,
+      "uiComponent": "sensor",
+      "icon": "/assets/capability-icons/power_factor.svg"
+    },
+    "inverter_rssi": {
+      "type": "number",
+      "title": {
+        "en": "WiFi signal strength",
+        "nl": "WiFi-signaalsterkte"
+      },
+      "decimals": 0,
+      "getable": true,
+      "setable": false,
+      "uiComponent": "sensor",
+      "icon": "/assets/capability-icons/rssi.svg"
+    },
+    "inverter_timestamp": {
+      "type": "string",
+      "title": {
+        "en": "Inverter timestamp",
+        "nl": "Tijdstempel omvormer"
+      },
+      "getable": true,
+      "setable": false,
+      "uiComponent": "sensor",
+      "icon": "/assets/capability-icons/timestamp.svg"
+    },
+    "inverter_work_mode": {
+      "type": "string",
+      "title": {
+        "en": "Work mode",
+        "nl": "Werkmodus"
+      },
+      "getable": true,
+      "setable": false,
+      "uiComponent": "sensor",
+      "icon": "/assets/capability-icons/work_mode.svg"
+    }
+  }
 }

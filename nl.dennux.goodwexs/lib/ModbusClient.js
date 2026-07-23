@@ -1,19 +1,21 @@
 'use strict';
 
 const ModbusRTU = require('modbus-serial');
-const CONSTANTS = require('./Constants');
 
-class GoodWeConnection {
 
-    constructor(ip, port, unitId) {
+class ModbusClient {
+
+    constructor(ip, port, unitId, timeout = 5000) {
 
         this.ip = ip;
         this.port = port;
         this.unitId = unitId;
+        this.timeout = timeout;
 
         this.client = new ModbusRTU();
 
     }
+
 
     async connect() {
 
@@ -23,7 +25,10 @@ class GoodWeConnection {
 
         this.client.setID(this.unitId);
 
+        this.client.setTimeout(this.timeout);
+
     }
+
 
     async disconnect() {
 
@@ -35,17 +40,21 @@ class GoodWeConnection {
 
     }
 
-    async readIdentification() {
 
-    const result = await this.client.readHoldingRegisters(
-        CONSTANTS.MODBUS.IDENTIFICATION.START,
-        CONSTANTS.MODBUS.IDENTIFICATION.COUNT
-    );
+    async readHoldingRegisters(start, length) {
 
-    return result.data;
+        const result =
+            await this.client.readHoldingRegisters(
+                start,
+                length
+            );
+
+        return result.data;
+
+    }
+
 
 }
 
-}
 
-module.exports = GoodWeConnection;
+module.exports = ModbusClient;

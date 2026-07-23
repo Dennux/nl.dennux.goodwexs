@@ -17,5 +17,80 @@
                 "invalidUnitId": "Voer een geldige Modbus Unit ID in (1 t/m 247)."
             }
         }
+    },
+    "capabilities": {
+        "measure_power": {
+            "title": "Vermogen naar huis/net (AC)"
+        },
+        "measure_power.total_input": {
+            "title": "Vermogen vanaf zonnepanelen (DC, dak)"
+        },
+        "measure_power.apparent": {
+            "title": "Schijnbaar vermogen"
+        },
+        "meter_power": {
+            "title": "Totale opbrengst"
+        },
+        "meter_power.daily": {
+            "title": "Opbrengst vandaag"
+        },
+        "measure_voltage": {
+            "title": "MPPT-1 spanning"
+        },
+        "measure_voltage.grid": {
+            "title": "Netspanning"
+        },
+        "measure_current": {
+            "title": "MPPT-1 stroom"
+        },
+        "measure_current.grid": {
+            "title": "Netstroom"
+        },
+        "measure_current.leakage": {
+            "title": "Lekstroom"
+        },
+        "measure_temperature": {
+            "title": "Temperatuur omvormer"
+        },
+        "inverter_timestamp": {
+            "title": "Tijdstempel omvormer"
+        },
+        "inverter_work_mode": {
+            "title": "Werkmodus"
+        },
+        "inverter_efficiency": {
+            "title": "Omzettingsrendement"
+        },
+        "inverter_grid_frequency": {
+            "title": "Netfrequentie"
+        },
+        "inverter_power_factor": {
+            "title": "Vermogensfactor"
+        },
+        "inverter_fault_code": {
+            "title": "Foutcode"
+        },
+        "inverter_operating_hours": {
+            "title": "Totaal bedrijfsuren"
+        },
+        "inverter_rssi": {
+            "title": "WiFi-signaalsterkte"
+        },
+        "alarm_generic": {
+            "title": "Storing"
+        },
+        "connection_status": {
+            "true": "Verbonden",
+            "false": "Niet verbonden"
+        }
+    },
+    "work_mode": {
+        "0": "Wachten",
+        "1": "Normaal bedrijf",
+        "2": "Fout"
+    },
+    "connection_status": {
+        "connected": "Verbonden",
+        "disconnected": "Niet verbonden"
     }
 }

@@ -17,5 +17,79 @@
                 "invalidUnitId": "Please enter a valid Modbus Unit ID (1-247)."
             }
         }
-    }
+    },
+    "capabilities": {
+        "measure_power": {
+            "title": "Power to house/grid (AC)"
+        },
+        "measure_power.total_input": {
+            "title": "Power from solar panels (DC, roof)"
+        },
+        "measure_power.apparent": {
+            "title": "Apparent power"
+        },
+        "meter_power": {
+            "title": "Total yield"
+        },
+        "meter_power.daily": {
+            "title": "Yield today"
+        },
+        "measure_voltage": {
+            "title": "MPPT-1 voltage"
+        },
+        "measure_voltage.grid": {
+            "title": "Grid voltage"
+        },
+        "measure_current": {
+            "title": "MPPT-1 current"
+        },
+        "measure_current.grid": {
+            "title": "Grid current"
+        },
+        "measure_current.leakage": {
+            "title": "Leakage current"
+        },
+        "measure_temperature": {
+            "title": "Inverter temperature"
+        },
+        "inverter_timestamp": {
+            "title": "Inverter timestamp"
+        },
+        "inverter_work_mode": {
+            "title": "Work mode"
+        },
+        "inverter_efficiency": {
+            "title": "Efficiency"
+        },
+        "inverter_grid_frequency": {
+            "title": "Grid frequency"
+        },
+        "inverter_power_factor": {
+            "title": "Power factor"
+        },
+        "inverter_fault_code": {
+            "title": "Fault code"
+        },
+        "inverter_operating_hours": {
+            "title": "Total operating hours"
+        },
+        "inverter_rssi": {
+            "title": "WiFi signal strength"
+        },
+        "alarm_generic": {
+            "title": "Fault"
+        },
+        "connection_status": {
+            "title": "Connection status"
+        }
+    },
+    "work_mode": {
+        "0": "Waiting",
+        "1": "Normal",
+        "2": "Fault"
+    },
+    "connection_status": {
+    "connected": "Connected",
+    "disconnected": "Disconnected"
+  }
 }

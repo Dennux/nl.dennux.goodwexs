@@ -1,0 +1,12 @@
+{
+  "type": "number",
+  "title": {
+    "en": "WiFi signal strength",
+    "nl": "WiFi-signaalsterkte"
+  },
+  "decimals": 0,
+  "getable": true,
+  "setable": false,
+  "uiComponent": "sensor",
+  "icon": "/assets/capability-icons/rssi.svg"
+}

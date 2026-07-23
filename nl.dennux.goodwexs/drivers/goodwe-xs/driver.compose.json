@@ -7,9 +7,107 @@
   "platforms": [
     "local"
   ],
-  "capabilities": [
-    "measure_power"
+  "connectivity": [
+    "lan"
   ],
+  "capabilities": [
+    "measure_power",
+    "measure_power.total_input",
+    "measure_power.apparent",
+    "meter_power",
+    "meter_power.daily",
+    "measure_voltage",
+    "measure_voltage.grid",
+    "measure_current",
+    "measure_current.grid",
+    "measure_current.leakage",
+    "measure_temperature",
+    "inverter_timestamp",
+    "inverter_work_mode",
+    "connection_status",
+    "inverter_efficiency",
+    "inverter_grid_frequency",
+    "inverter_power_factor",
+    "inverter_fault_code",
+    "inverter_operating_hours",
+    "inverter_rssi",
+    "alarm_generic"
+  ],
+  "capabilitiesOptions": {
+    "measure_power": {
+      "title": {
+        "en": "Power to house/grid (AC)",
+        "nl": "Vermogen naar huis/net (AC)"
+      }
+    },
+    "measure_power.total_input": {
+      "title": {
+        "en": "Power from solar panels (DC, roof)",
+        "nl": "Vermogen vanaf zonnepanelen (DC, dak)"
+      }
+    },
+    "measure_power.apparent": {
+      "title": {
+        "en": "Apparent power",
+        "nl": "Schijnbaar vermogen"
+      }
+    },
+    "meter_power": {
+      "title": {
+        "en": "Total yield",
+        "nl": "Totale opbrengst"
+      }
+    },
+    "meter_power.daily": {
+      "title": {
+        "en": "Yield today",
+        "nl": "Opbrengst vandaag"
+      }
+    },
+    "measure_voltage": {
+      "title": {
+        "en": "MPPT-1 voltage",
+        "nl": "MPPT-1-spanning"
+      }
+    },
+    "measure_voltage.grid": {
+      "title": {
+        "en": "Grid voltage",
+        "nl": "Netspanning"
+      }
+    },
+    "measure_current": {
+      "title": {
+        "en": "MPPT-1 current",
+        "nl": "MPPT-1-stroom"
+      }
+    },
+    "measure_current.grid": {
+      "title": {
+        "en": "Grid current",
+        "nl": "Netstroom"
+      }
+    },
+    "measure_current.leakage": {
+      "title": {
+        "en": "Leakage current",
+        "nl": "Lekstroom"
+      },
+      "units": {
+        "en": "mA",
+        "nl": "mA"
+      }
+    },
+    "alarm_generic": {
+      "title": {
+        "en": "Fault",
+        "nl": "Storing"
+      }
+    }
+  },
+  "energy": {
+    "meterPowerExportedCapability": "meter_power"
+  },
   "pair": [
     {
       "id": "network"

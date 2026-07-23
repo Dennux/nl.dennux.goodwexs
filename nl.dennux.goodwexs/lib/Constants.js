@@ -17,8 +17,13 @@ module.exports = {
     IPV4_REGEX,
 
     DEFAULTS: {
-        PORT: 502
+        PORT: 502,
+        POLL_INTERVAL: 10
     },
+    CONNECTION: {
+        MAX_FAILED_POLLS: 3
+    },
+
 
     PAIR_EVENTS: {
         TEST_CONNECTION: 'testConnection',

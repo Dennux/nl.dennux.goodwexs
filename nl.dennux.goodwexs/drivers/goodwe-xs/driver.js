@@ -2,7 +2,7 @@
 
 const Homey = require('homey');
 const CONSTANTS = require('../../lib/Constants');
-const GoodWeConnection = require('../../lib/GoodWeConnection');
+const ModbusClient = require('../../lib/ModbusClient');
 const GoodWeParser = require('../../lib/GoodWeParser');
 
 
@@ -41,7 +41,7 @@ class GoodWeXSDriver extends Homey.Driver {
 
     async getIdentification(data) {
 
-        const connection = new GoodWeConnection(
+        const connection = new ModbusClient(
             data.ip,
             Number(data.port),
             Number(data.unitId)
@@ -51,7 +51,11 @@ class GoodWeXSDriver extends Homey.Driver {
 
             await connection.connect();
 
-            const registers = await connection.readIdentification();
+            const registers =
+                await connection.readHoldingRegisters(
+                    CONSTANTS.MODBUS.IDENTIFICATION.START,
+                    CONSTANTS.MODBUS.IDENTIFICATION.COUNT
+                );
 
             const identification =
                 GoodWeParser.parseIdentification(registers);
