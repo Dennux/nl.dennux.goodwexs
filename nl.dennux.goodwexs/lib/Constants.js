@@ -21,7 +21,8 @@ module.exports = {
     },
 
     PAIR_EVENTS: {
-        TEST_CONNECTION: 'testConnection'
+        TEST_CONNECTION: 'testConnection',
+        LIST_DEVICES: 'list_devices'
     },
 
     /*

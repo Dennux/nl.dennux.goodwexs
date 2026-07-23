@@ -39,7 +39,7 @@ class GoodWeXSDriver extends Homey.Driver {
     }
 
 
-    async readIdentification(data) {
+    async getIdentification(data) {
 
         const connection = new GoodWeConnection(
             data.ip,
@@ -56,13 +56,15 @@ class GoodWeXSDriver extends Homey.Driver {
             const identification =
                 GoodWeParser.parseIdentification(registers);
 
-            this.log('Identification:', identification);
+            if (this.getSettings().debug) {
+                this.log('[DEBUG] Identification:', identification);
+            }
 
             return identification;
 
         } finally {
 
-            await connection.disconnect();
+            await connection.disconnect().catch(error => this.error(error));
 
         }
 
@@ -80,19 +82,19 @@ class GoodWeXSDriver extends Homey.Driver {
                 validateConnectionSettings(data);
 
                 const identification =
-                    await this.readIdentification(data);
+                    await this.getIdentification(data);
 
-                this.log(
-                    'Pair identification:',
-                    identification
-                );
+                if (this.getSettings().debug) {
+                    this.log(
+                        '[DEBUG] Pair identification:',
+                        identification
+                    );
+                }
 
 
                 session.setHandler(
-                    'list_devices',
+                    CONSTANTS.PAIR_EVENTS.LIST_DEVICES,
                     async () => {
-
-                        this.log('LIST DEVICES HANDLER CALLED');
 
                         return [
                             {
@@ -124,49 +126,6 @@ class GoodWeXSDriver extends Homey.Driver {
 
     }
 
-    async onPairListDevices() {
-
-        this.error('========== onPairListDevices CALLED ==========');
-
-        return [
-            {
-                name: 'TEST GoodWe',
-
-                data: {
-                    id: 'test-goodwe'
-                }
-            }
-        ];
-
-        /*   this.log(
-               'Creating device from identification:',
-               this.identification
-           );
-   
-           return [
-               {
-                   name: `${this.identification.model} (${this.identification.serialNumber})`,
-   
-                   data: {
-                       id: this.identification.serialNumber
-                   },
-   
-                   settings: {
-   
-                       serialNumber:
-                           this.identification.serialNumber,
-   
-                       model:
-                           this.identification.model,
-   
-                       firmwareVersion:
-                           this.identification.firmware.version
-   
-                   }
-               }
-           ];*/
-
-    }
 
 
 
