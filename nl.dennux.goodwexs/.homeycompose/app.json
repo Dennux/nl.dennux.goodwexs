@@ -29,7 +29,6 @@
     "name": "Dennux",
     "email": "dennis@dennux.nl"
   },
-  "support": {
-  "email": "dennis@dennux.nl"
-}
+  "support": "mailto:dennis@dennux.nl"
+
 }
