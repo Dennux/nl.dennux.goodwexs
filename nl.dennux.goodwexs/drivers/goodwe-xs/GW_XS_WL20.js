@@ -7,8 +7,10 @@
  * =============================================================================
  *
  * Verified hardware:
- *   GoodWe 2500-XS
- *   WiFi/LAN Kit 2.0
+ * GoodWe XS series with WiFi/LAN Kit 2.0
+ *
+ * Validated model:
+ * GoodWe 2500-XS
  *
  * Communication:
  *   Modbus TCP
@@ -41,11 +43,9 @@
  * =============================================================================
  */
 
-
 module.exports = {
 
-
-     /*
+  /*
  * -------------------------------------------------------------------------
  * Identification block
  * -------------------------------------------------------------------------
@@ -71,16 +71,15 @@ module.exports = {
  *   35 registers
  *
  */
-    IDENTIFICATION: {
+  IDENTIFICATION: {
 
-        START: 30004,
+    START: 30004,
 
-        COUNT: 35
+    COUNT: 35,
 
-    },
+  },
 
-
-    /*
+  /*
      * -------------------------------------------------------------------------
      * Live data block
      * -------------------------------------------------------------------------
@@ -92,17 +91,15 @@ module.exports = {
      *   111 registers
      *
      */
-    LIVE_DATA: {
+  LIVE_DATA: {
 
-        START: 30100,
+    START: 30100,
 
-        COUNT: 111,
+    COUNT: 111,
 
+    OFFSET: {
 
-        OFFSET: {
-
-
-            /*
+      /*
              * Timestamp
              *
              * Registers:
@@ -115,10 +112,9 @@ module.exports = {
              *   3 registers
              *   6 bytes
              */
-            TIMESTAMP_START: 0,
+      TIMESTAMP_START: 0,
 
-
-            /*
+      /*
              * MPPT 1 voltage
              *
              * Register:
@@ -127,10 +123,9 @@ module.exports = {
              * Offset:
              *   3
              */
-            VMPPT1: 3,
+      VMPPT1: 3,
 
-
-            /*
+      /*
              * MPPT 1 current
              *
              * Register:
@@ -139,10 +134,9 @@ module.exports = {
              * Offset:
              *   4
              */
-            IMPPT1: 4,
+      IMPPT1: 4,
 
-
-            /*
+      /*
              * Grid voltage L1
              *
              * Register:
@@ -154,10 +148,9 @@ module.exports = {
              * Scale:
              *   /10 = Volt
              */
-            VGRID1: 18,
+      VGRID1: 18,
 
-
-            /*
+      /*
              * Grid current L1
              *
              * Register:
@@ -169,10 +162,9 @@ module.exports = {
              * Scale:
              *   /10 = Ampere
              */
-            IGRID1: 21,
+      IGRID1: 21,
 
-
-            /*
+      /*
              * Grid frequency L1
              *
              * Register:
@@ -184,10 +176,9 @@ module.exports = {
              * Scale:
              *   /100 = Hertz
              */
-            FGRID1: 24,
+      FGRID1: 24,
 
-
-            /*
+      /*
              * AC output power
              *
              * Registers:
@@ -200,11 +191,10 @@ module.exports = {
              * Data type:
              *   UInt32
              */
-            PAC_HIGH: 27,
-            PAC_LOW: 28,
+      PAC_HIGH: 27,
+      PAC_LOW: 28,
 
-
-            /*
+      /*
              * Working mode
              *
              * Register:
@@ -213,10 +203,9 @@ module.exports = {
              * Offset:
              *   29
              */
-            WORK_MODE: 29,
+      WORK_MODE: 29,
 
-
-            /*
+      /*
              * Error code
              *
              * Registers:
@@ -229,11 +218,10 @@ module.exports = {
              * Data type:
              *   UInt32
              */
-            ERROR_CODES_HIGH: 30,
-            ERROR_CODES_LOW: 31,
+      ERROR_CODES_HIGH: 30,
+      ERROR_CODES_LOW: 31,
 
-
-            /*
+      /*
              * Apparent power
              *
              * Registers:
@@ -246,11 +234,10 @@ module.exports = {
              * Unit:
              *   VA
              */
-            APPARENT_POWER_HIGH: 33,
-            APPARENT_POWER_LOW: 34,
+      APPARENT_POWER_HIGH: 33,
+      APPARENT_POWER_LOW: 34,
 
-
-            /*
+      /*
              * Total input power
              *
              * Registers:
@@ -263,11 +250,10 @@ module.exports = {
              * Data type:
              *   UInt32
              */
-            TOTAL_INPUT_POWER_HIGH: 37,
-            TOTAL_INPUT_POWER_LOW: 38,
+      TOTAL_INPUT_POWER_HIGH: 37,
+      TOTAL_INPUT_POWER_LOW: 38,
 
-
-            /*
+      /*
              * Power factor
              *
              * Register:
@@ -281,10 +267,9 @@ module.exports = {
              *
              * Signed value
              */
-            POWER_FACTOR: 39,
+      POWER_FACTOR: 39,
 
-
-            /*
+      /*
              * Temperature
              *
              * Register:
@@ -293,10 +278,9 @@ module.exports = {
              * Offset:
              *   41
              */
-            TEMPERATURE: 41,
+      TEMPERATURE: 41,
 
-
-            /*
+      /*
              * Daily energy yield
              *
              * Register:
@@ -305,10 +289,9 @@ module.exports = {
              * Offset:
              *   44
              */
-            DAILY_YIELD: 44,
+      DAILY_YIELD: 44,
 
-
-            /*
+      /*
              * Total energy yield
              *
              * Registers:
@@ -321,11 +304,10 @@ module.exports = {
              * Data type:
              *   UInt32
              */
-            TOTAL_YIELD_HIGH: 45,
-            TOTAL_YIELD_LOW: 46,
+      TOTAL_YIELD_HIGH: 45,
+      TOTAL_YIELD_LOW: 46,
 
-
-            /*
+      /*
              * Total operating hours
              *
              * Registers:
@@ -338,11 +320,10 @@ module.exports = {
              * Data type:
              *   UInt32
              */
-            H_TOTAL_HIGH: 47,
-            H_TOTAL_LOW: 48,
+      H_TOTAL_HIGH: 47,
+      H_TOTAL_LOW: 48,
 
-
-            /*
+      /*
              * WiFi signal strength
              *
              * Register:
@@ -351,10 +332,9 @@ module.exports = {
              * Offset:
              *   72
              */
-            RSSI: 72,
+      RSSI: 72,
 
-
-            /*
+      /*
              * Ground leakage current
              *
              * Register:
@@ -366,10 +346,10 @@ module.exports = {
              * Scale:
              *   Not verified
              */
-            LEAKAGE_CURRENT: 110
+      LEAKAGE_CURRENT: 110,
 
-        }
+    },
 
-    }
+  },
 
 };

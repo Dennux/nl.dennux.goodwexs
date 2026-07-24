@@ -1,6 +1,6 @@
 'use strict';
-const IPV4_REGEX =
-    /^(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3}$/;
+
+const IPV4_REGEX = /^(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3}$/;
 
 /*
  * GoodWe 2500-XS Register Map
@@ -14,23 +14,22 @@ const IPV4_REGEX =
  */
 module.exports = {
 
-    IPV4_REGEX,
+  IPV4_REGEX,
 
-    DEFAULTS: {
-        PORT: 502,
-        POLL_INTERVAL: 10
-    },
-    CONNECTION: {
-        MAX_FAILED_POLLS: 3
-    },
+  DEFAULTS: {
+    PORT: 502,
+    POLL_INTERVAL: 10,
+  },
+  CONNECTION: {
+    MAX_FAILED_POLLS: 3,
+  },
 
+  PAIR_EVENTS: {
+    TEST_CONNECTION: 'testConnection',
+    LIST_DEVICES: 'list_devices',
+  },
 
-    PAIR_EVENTS: {
-        TEST_CONNECTION: 'testConnection',
-        LIST_DEVICES: 'list_devices'
-    },
-
-    /*
+  /*
     * GoodWe register addressing.
     *
     * Although the GoodWe documentation refers to the identification block
@@ -40,25 +39,25 @@ module.exports = {
     * This has been verified against a physical inverter.
     * Do not change this without validating on hardware.
     */
-    MODBUS: {
-        DEFAULT_UNIT_ID: 247,
-        DEFAULT_TIMEOUT: 5000,
-        IDENTIFICATION: {
+  MODBUS: {
+    DEFAULT_UNIT_ID: 247,
+    DEFAULT_TIMEOUT: 5000,
+    IDENTIFICATION: {
 
-            START: 30004,
-            COUNT: 35,
+      START: 30004,
+      COUNT: 35,
 
-            OFFSET: {
+      OFFSET: {
 
-                SERIAL_START: 0,
-                SERIAL_LENGTH: 8,
+        SERIAL_START: 0,
+        SERIAL_LENGTH: 8,
 
-                DSP1_VERSION: 30,
-                DSP2_VERSION: 31,
-                ARM_VERSION: 32
+        DSP1_VERSION: 30,
+        DSP2_VERSION: 31,
+        ARM_VERSION: 32,
 
-            }
-        }
-    }
+      },
+    },
+  },
 
 };
