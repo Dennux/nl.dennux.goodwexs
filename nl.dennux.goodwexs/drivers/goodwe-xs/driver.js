@@ -4,6 +4,7 @@ const Homey = require('homey');
 const CONSTANTS = require('../../lib/Constants');
 const ModbusClient = require('../../lib/ModbusClient');
 const XSParser = require('./XSParser');
+const DEVICE = require('./GW_XS_WL20');
 
 function validateConnectionSettings(data) {
 
@@ -32,7 +33,7 @@ function validateConnectionSettings(data) {
 class GoodWeXSDriver extends Homey.Driver {
 
   async onInit() {
-    this.log('GoodWe 2500-XS driver initialized');
+    this.log('GoodWe XS driver initialized');
 
   }
 
@@ -49,8 +50,8 @@ class GoodWeXSDriver extends Homey.Driver {
       await connection.connect();
 
       const registers = await connection.readHoldingRegisters(
-        CONSTANTS.MODBUS.IDENTIFICATION.START,
-        CONSTANTS.MODBUS.IDENTIFICATION.COUNT,
+        DEVICE.IDENTIFICATION.START,
+        DEVICE.IDENTIFICATION.COUNT,
       );
 
       const identification = XSParser.parseIdentification(registers);

@@ -94,6 +94,8 @@ class XSRuntime {
 
         });
 
+      this.connection = null;
+
     }
 
   }
@@ -209,8 +211,8 @@ class XSRuntime {
       await this.connection.connect();
 
       const registers = await this.connection.readHoldingRegisters(
-        CONSTANTS.MODBUS.IDENTIFICATION.START,
-        CONSTANTS.MODBUS.IDENTIFICATION.COUNT,
+        DEVICE.IDENTIFICATION.START,
+        DEVICE.IDENTIFICATION.COUNT,
       );
 
       await this.connection.disconnect();

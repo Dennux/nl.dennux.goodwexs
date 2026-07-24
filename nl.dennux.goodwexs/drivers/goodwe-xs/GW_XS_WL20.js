@@ -2,7 +2,7 @@
 
 /*
  * =============================================================================
- * GoodWe 2500-XS with WiFi/LAN Kit 2.0
+ * GoodWe XS with WiFi/LAN Kit 2.0
  * Modbus Register Map
  * =============================================================================
  *
@@ -55,7 +55,7 @@ module.exports = {
  * The current pairing implementation uses the Modbus settings
  * from:
  *
- *   lib/Constants.js
+ *
  *
  * This section is kept here as part of the complete hardware register map.
  *
@@ -74,9 +74,18 @@ module.exports = {
   IDENTIFICATION: {
 
     START: 30004,
-
     COUNT: 35,
 
+    OFFSET: {
+
+      SERIAL_START: 0,
+      SERIAL_LENGTH: 8,
+
+      DSP1_VERSION: 30,
+      DSP2_VERSION: 31,
+      ARM_VERSION: 32,
+
+    },
   },
 
   /*

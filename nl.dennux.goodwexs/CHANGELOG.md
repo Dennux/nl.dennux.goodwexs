@@ -1,8 +1,78 @@
+
 # Changelog
 
 All notable changes to this project will be documented in this file.
 
-The format is based on Keep a Changelog principles.
+## [1.1.0] - 2026-07-24
+
+### Improved
+
+- Improved overall application stability for production use.
+- Improved Modbus TCP communication handling.
+- Improved handling of connection loss and automatic recovery.
+- Improved device availability handling when the inverter cannot be reached.
+- Improved handling of device settings changes.
+- Improved polling interval updates without unnecessary restarts.
+- Improved debug logging and diagnostics.
+
+### Improved
+
+- Added inverter identification handling:
+  - Model information
+  - Serial number
+  - Firmware information
+- Added connection status monitoring.
+- Added improved runtime management for the inverter communication.
+
+### Fixed
+
+- Fixed issues with runtime settings updates.
+- Fixed issues where changed settings were not immediately applied.
+- Fixed cleanup of communication resources when devices are removed or the app stops.
+- Fixed internal separation between inverter register definitions and communication logic.
+
+### Technical
+
+- Moved GoodWe XS register definitions into a dedicated hardware definition file.
+- Improved internal architecture separation:
+  - Device lifecycle handling
+  - Runtime communication
+  - Register parsing
+  - Capability updates
+- Prepared the application for future GoodWe XS series extensions.
+
+------------------------------------------------------------------------
+
+## [1.0.3] - 2026-07-24
+
+### Added
+
+- Added dedicated XS runtime architecture.
+- Added XSDataUpdater for centralized capability updates.
+- Added custom Logger implementation with configurable debug logging.
+
+### Improved
+
+- Refactored GoodWe XS device handling into separate responsibilities:
+    - device lifecycle handling
+    - runtime communication handling
+    - Modbus parsing
+    - capability updates
+- Renamed GoodWe parser to XSParser.
+- Improved settings update handling.
+- Improved polling configuration handling.
+- Improved connection monitoring and recovery handling.
+
+### Fixed
+
+- Fixed runtime settings updates after device configuration changes.
+- Fixed dynamic poll interval updates.
+- Improved debug logging state updates.
+
+### Technical
+
+- Improved maintainability for future GoodWe XS series support.
+- Kept Modbus TCP communication using connect/read/disconnect flow.
 
 ------------------------------------------------------------------------
 
@@ -57,7 +127,7 @@ First stable development release.
 
 ### Added
 
--   GoodWe 2500-XS Modbus TCP support.
+-   GoodWe XS Modbus TCP support.
 -   Local communication through GoodWe WiFi/LAN Kit 2.0.
 -   Live inverter monitoring.
 -   Energy yield monitoring.

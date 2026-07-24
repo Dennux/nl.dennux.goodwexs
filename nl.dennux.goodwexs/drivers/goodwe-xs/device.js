@@ -48,13 +48,25 @@ class GoodWeXSDevice extends Homey.Device {
 
   }
 
-  async onDeleted() {
+  async stopRuntime() {
 
     if (this.runtime) {
 
       await this.runtime.stop();
 
     }
+
+  }
+
+  async onUninit() {
+
+    await this.stopRuntime();
+
+  }
+
+  async onDeleted() {
+
+    await this.stopRuntime();
 
   }
 

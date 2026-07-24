@@ -2,7 +2,6 @@
 
 const DEVICE = require('./GW_XS_WL20');
 const ParserUtils = require('../../lib/ParserUtils');
-const CONSTANTS = require('../../lib/Constants');
 
 /*
  * =============================================================================
@@ -32,22 +31,22 @@ class XSParser {
 
     const serialNumber = ParserUtils.registersToAscii(
       registers.slice(
-        CONSTANTS.MODBUS.IDENTIFICATION.OFFSET.SERIAL_START,
-        CONSTANTS.MODBUS.IDENTIFICATION.OFFSET.SERIAL_START
-                + CONSTANTS.MODBUS.IDENTIFICATION.OFFSET.SERIAL_LENGTH,
+        DEVICE.IDENTIFICATION.OFFSET.SERIAL_START,
+        DEVICE.IDENTIFICATION.OFFSET.SERIAL_START
+                + DEVICE.IDENTIFICATION.OFFSET.SERIAL_LENGTH,
       ),
     );
 
     const dsp1 = registers[
-      CONSTANTS.MODBUS.IDENTIFICATION.OFFSET.DSP1_VERSION
+      DEVICE.IDENTIFICATION.OFFSET.DSP1_VERSION
     ];
 
     const dsp2 = registers[
-      CONSTANTS.MODBUS.IDENTIFICATION.OFFSET.DSP2_VERSION
+      DEVICE.IDENTIFICATION.OFFSET.DSP2_VERSION
     ];
 
     const arm = registers[
-      CONSTANTS.MODBUS.IDENTIFICATION.OFFSET.ARM_VERSION
+      DEVICE.IDENTIFICATION.OFFSET.ARM_VERSION
     ];
 
     return {
