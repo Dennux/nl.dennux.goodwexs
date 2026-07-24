@@ -30,21 +30,20 @@ class GoodWeXSDevice extends Homey.Device {
   async onSettings({
     oldSettings,
     newSettings,
-    changedKeys
+    changedKeys,
   }) {
 
     if (changedKeys.includes('debug')) {
 
-  
       this.logger.setDebug(
-        newSettings.debug
+        newSettings.debug,
       );
 
     }
 
     await this.runtime.settingsChanged(
       newSettings,
-      changedKeys
+      changedKeys,
     );
 
   }
