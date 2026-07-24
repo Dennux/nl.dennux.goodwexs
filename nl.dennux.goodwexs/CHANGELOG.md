@@ -3,6 +3,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.1.1] - 2026-07-24
+
+### Fixed
+
+- Fixed UInt32 Modbus parsing for values where the high register uses the sign bit.
+- Improved reliability of large numeric values such as operating hours and fault codes.
+
 ## [1.1.0] - 2026-07-24
 
 ### Improved

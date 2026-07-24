@@ -34,8 +34,8 @@ class ParserUtils {
   static toUInt32(high, low) {
 
     return (
-      (high << 16)
-            + low
+      ((high & 0xFFFF) * 0x10000)
+    + (low & 0xFFFF)
     );
 
   }
