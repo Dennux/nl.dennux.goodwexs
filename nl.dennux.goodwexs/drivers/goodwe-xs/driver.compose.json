@@ -10,11 +10,6 @@
   "connectivity": [
     "lan"
   ],
-   "images": {
-    "small": "/drivers/goodwe-xs/assets/images/small.png",
-    "large": "/drivers/goodwe-xs/assets/images/large.png",
-    "xlarge": "/drivers/goodwe-xs/assets/images/xlarge.png"
-  },
   "capabilities": [
     "measure_power",
     "measure_power.total_input",
