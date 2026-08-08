@@ -87,7 +87,9 @@
     "work_mode": {
         "0": "Wachten",
         "1": "Normaal bedrijf",
-        "2": "Fout"
+        "2": "Fout",
+        "3": "Uit bedrijf",
+        "4": "Zelfcontrole"
     },
     "connection_status": {
         "connected": "Verbonden",

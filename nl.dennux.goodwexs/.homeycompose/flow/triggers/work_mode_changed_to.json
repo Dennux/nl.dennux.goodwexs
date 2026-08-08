@@ -1,0 +1,66 @@
+{
+  "id": "work_mode_changed_to",
+  "title": {
+    "en": "Work mode changes to...",
+    "nl": "Werkmodus wijzigt naar..."
+  },
+  "titleFormatted": {
+    "en": "Work mode changes to [[work_mode]]",
+    "nl": "Werkmodus wijzigt naar [[work_mode]]"
+  },
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=goodwe-xs"
+    },
+
+    {
+      "name": "work_mode",
+      "type": "dropdown",
+      "title": {
+        "en": "Work mode",
+        "nl": "Werkmodus"
+      },
+      "values": [
+        {
+          "id": "0",
+          "title": {
+            "en": "Waiting",
+            "nl": "Wachten"
+          }
+        },
+        {
+          "id": "1",
+          "title": {
+            "en": "Normal",
+            "nl": "Normaal bedrijf"
+          }
+        },
+        {
+          "id": "2",
+          "title": {
+            "en": "Fault",
+            "nl": "Fout"
+          }
+        },
+        {
+          "id": "3",
+          "title": {
+            "en": "Off grid",
+            "nl": "Uit bedrijf"
+          }
+        },
+        {
+          "id": "4",
+          "title": {
+            "en": "Self-check",
+            "nl": "Zelfcontrole"
+          }
+        }
+        
+          
+      ]
+    }
+  ]
+}

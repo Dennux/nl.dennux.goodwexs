@@ -150,12 +150,25 @@ class XSDataUpdater {
       workMode,
     );
 
+ // Flow triggers use the raw code (not the translated label) for
+    // reliable, locale-independent comparison.
+    await this.device.handleWorkModeTransition(
+      data.workModeCode,
+    );
     // Fault state is based on inverter work mode and fault code.
     const inverterFault = data.workModeCode === 2
             || data.faultCode !== '0x00000000';
 
     await this.device.setCapabilityValue(
       'alarm_generic',
+      inverterFault,
+    );
+
+    // Flow triggers use the real inverter fault state computed above, not
+    // the shared alarm_generic capability - that capability also reflects
+    // connection loss (see updateConnectionStatus below), which must not
+    // fire fault_detected/fault_resolved on a simple WiFi hiccup.
+    await this.device.handleFaultTransition(
       inverterFault,
     );
 

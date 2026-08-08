@@ -86,7 +86,10 @@
     "work_mode": {
         "0": "Waiting",
         "1": "Normal",
-        "2": "Fault"
+        "2": "Fault", 
+        "3": "Off grid",
+        "4": "Self-check"
+    
     },
     "connection_status": {
     "connected": "Connected",

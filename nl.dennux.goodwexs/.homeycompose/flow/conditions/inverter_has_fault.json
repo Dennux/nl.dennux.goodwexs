@@ -1,0 +1,8 @@
+{
+  "id": "inverter_has_fault",
+  "title": {
+    "en": "Inverter !{{has|does not have}} a fault",
+    "nl": "Omvormer heeft !{{wel|geen}} storing"
+  },
+  "filter": "class=solarpanel"
+}
