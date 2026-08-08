@@ -1,11 +1,18 @@
 {
   "1.0.0": {
-    "en": "First version!"
+    "en": "First version!",
+    "nl": "Eerste versie!"
   },
   "1.1.0": {
-    "en": "First release"
+    "en": "First release",
+    "nl": "Eerste release"
   },
   "1.1.1": {
-    "en": "Bug Fix UInt32 Modbus parsing"
+    "en": "Bug Fix UInt32 Modbus parsing",
+    "nl": "Bugfix voor UInt32 Modbus-parsing"
+  },
+  "1.2.0": {
+    "en": "Added Flow cards for inverter faults and work mode changes.",
+    "nl": "Flow-kaarten toegevoegd voor omvormerstoringen en wijzigingen van de werkmodus."
   }
 }
