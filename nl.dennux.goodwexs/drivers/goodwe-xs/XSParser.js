@@ -244,19 +244,19 @@ class XSParser {
       // WiFi signal strength
       // Register 30173
       rssi:
-               ParserUtils.toInt16(   registers[
-                  DEVICE.LIVE_DATA.OFFSET.RSSI
-                ],),
+               ParserUtils.toInt16(registers[
+                 DEVICE.LIVE_DATA.OFFSET.RSSI
+               ]),
 
       // Leakage current
       // Register 30211
       // Scale /10 mA
       leakageCurrent:
                 ParserUtils.toInt16(
-            registers[
-              DEVICE.LIVE_DATA.OFFSET.LEAKAGE_CURRENT
-            ],
-          ) / 10,
+                  registers[
+                    DEVICE.LIVE_DATA.OFFSET.LEAKAGE_CURRENT
+                  ],
+                ) / 10,
 
       // Calculated efficiency
       efficiency:

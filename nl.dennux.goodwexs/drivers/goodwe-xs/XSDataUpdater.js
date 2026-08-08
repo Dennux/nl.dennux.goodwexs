@@ -150,7 +150,7 @@ class XSDataUpdater {
       workMode,
     );
 
- // Flow triggers use the raw code (not the translated label) for
+    // Flow triggers use the raw code (not the translated label) for
     // reliable, locale-independent comparison.
     await this.device.handleWorkModeTransition(
       data.workModeCode,

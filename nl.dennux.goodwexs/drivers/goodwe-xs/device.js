@@ -139,7 +139,7 @@ class GoodWeXSDevice extends Homey.Device {
 
   }
 
- /**
+  /**
    * Called by XSDataUpdater every poll with the raw work mode code
    * (0=waiting, 1=normal, 2=fault).
    *
