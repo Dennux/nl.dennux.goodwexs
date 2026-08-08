@@ -1,0 +1,14 @@
+{
+  "id": "fault_resolved",
+  "title": {
+    "en": "Inverter fault resolved",
+    "nl": "Omvormer-storing is opgelost"
+  },
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=goodwe-xs"
+    }
+  ]
+}

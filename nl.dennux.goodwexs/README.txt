@@ -1,75 +1,23 @@
 # GoodWe XS
 
-Connect your GoodWe XS inverter to Homey using Modbus TCP and the GoodWe WiFi/LAN Kit 2.0.
+Bring your GoodWe XS inverter into Homey and keep track of your solar production directly from your own installation.
 
-Monitor your inverter locally in Homey without requiring an external cloud connection.
+See how much energy your system produces, monitor the inverter status and keep an eye on important information such as faults, firmware and device details.
 
-## Supported hardware
+The app works locally with the GoodWe WiFi/LAN Kit 2.0, giving you a direct connection to your inverter without depending on external cloud services.
 
-- GoodWe XS series (validated with GoodWe 2500-XS)
-- GoodWe WiFi/LAN Kit 2.0
-
-## Features
-
-### Live monitoring
-
-Monitor important inverter data:
-
-- Current power production
-- Daily and total energy yield
-- Grid voltage, current and frequency
-- Temperature
-- Operating hours
-- Efficiency
-- Fault information
-
-### Device information
-
-The app retrieves inverter information:
-
-- Model
-- Serial number
-- Firmware version
-
-### Connection monitoring
-
-The app monitors communication with the inverter:
-
-- Shows connection status
-- Detects communication failures
-- Automatically restores the connection when communication returns
-
-## Configuration
-
-During pairing configure:
-
-- IP address
-- Modbus TCP port
-- Modbus Unit ID
-
-Optional settings:
-
-- Polling interval
-- Debug logging
-
-Default Modbus settings:
-
-- Port: 502
-- Unit ID: 247
+Designed for the GoodWe XS series and validated with the GoodWe 2500-XS.
 
 ## Requirements
 
 - Homey Pro
 - GoodWe XS inverter
 - GoodWe WiFi/LAN Kit 2.0
-- Local network connection
 
 ## Limitations
 
-- Officially validated with GoodWe 2500-XS
-- Battery systems are not supported
-- Other GoodWe models require separate validation
-- Automatic network discovery is not supported
+Battery systems are not supported.
+Other GoodWe models require validation.
 
 ## License
 

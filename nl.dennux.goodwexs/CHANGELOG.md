@@ -3,6 +3,109 @@
 
 All notable changes to this project will be documented in this file.
 
+
+## [1.2.0] - 2026-07-27
+
+### Added
+
+- Added GoodWe inverter identification support.
+  - Reads and stores:
+    - inverter model
+    - serial number
+    - firmware version
+  - Identification data is refreshed periodically.
+
+- Added dedicated XS runtime architecture.
+  - Separated Modbus communication, polling logic and Homey updates.
+  - Improved maintainability and preparation for future XS models.
+
+- Added GoodWe XS data updater component.
+  - Centralized Homey capability updates.
+  - Reduced coupling between device logic and inverter data processing.
+
+- Added inverter work mode flow support.
+  - Added translated work mode values.
+  - Supports:
+    - Waiting
+    - Normal operation
+    - Fault
+    - Self check
+    - Firmware update
+
+- Added improved connection status handling.
+  - Connection failures are tracked.
+  - Connection recovery is detected automatically.
+
+- Added daily yield history storage.
+  - Used for historical energy calculations.
+  - Maintains inverter production history inside Homey.
+
+- Added improved debug logging.
+  - Raw Modbus register output can be inspected.
+  - Parsed inverter data can be traced during development.
+
+---
+
+### Changed
+
+- Updated register handling for GoodWe XS series with WiFi/LAN Kit 2.0.
+- Improved Modbus polling stability.
+- Improved settings change handling.
+  - IP address changes
+  - Port changes
+  - Unit ID changes
+  - Timeout changes
+  - Poll interval changes
+
+- Improved identification handling.
+  - Identification reads no longer interfere with normal polling.
+
+- Updated internal naming from model-specific GoodWe 2500-XS references towards XS series support.
+
+---
+
+### Fixed
+
+- Fixed incorrect runtime lifecycle handling.
+  - Runtime now manages its own polling lifecycle.
+  - Prevented duplicate polling timers.
+
+- Fixed Modbus connection recovery issues.
+  - Failed connections are handled without crashing the device.
+  - Connection status is restored after recovery.
+
+- Fixed incorrect handling of changed device settings.
+  - Runtime now recreates Modbus connections when required.
+
+- Fixed pairing and initialization issues.
+  - Improved startup reliability.
+
+- Fixed work mode flow handling.
+  - Flow triggers now use consistent inverter status values.
+
+- Fixed identification data persistence.
+  - Serial number and firmware information are stored correctly.
+
+- Fixed inconsistent Homey capability updates.
+  - Capability updates are now centralized through XSDataUpdater.
+
+---
+
+### Technical notes
+
+- Modbus TCP communication intentionally uses:
+  - connect
+  - read registers
+  - disconnect
+
+  This is a deliberate design choice to avoid keeping the Modbus interface occupied and to allow external diagnostic tools to access the inverter.
+
+- Tested hardware:
+  - GoodWe XS series
+  - WiFi/LAN Kit 2.0
+  - GoodWe 2500-XS
+
+
 ## [1.1.1] - 2026-07-24
 
 ### Fixed

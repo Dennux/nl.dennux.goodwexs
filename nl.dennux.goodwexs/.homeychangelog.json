@@ -4,5 +4,8 @@
   },
   "1.1.0": {
     "en": "First release"
+  },
+  "1.1.1": {
+    "en": "Bug Fix UInt32 Modbus parsing"
   }
 }

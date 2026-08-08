@@ -14,7 +14,7 @@ const ParserUtils = require('../../lib/ParserUtils');
  *   ✔ GoodWe 2500-XS
  *
  * The parser is device specific.
- * Register locations are defined in GW2500XS_WL20.js.
+ * Register locations are defined in GW_XS_WL20.js.
  *
  * =============================================================================
  */
@@ -244,17 +244,19 @@ class XSParser {
       // WiFi signal strength
       // Register 30173
       rssi:
-                registers[
+               ParserUtils.toInt16(   registers[
                   DEVICE.LIVE_DATA.OFFSET.RSSI
-                ],
+                ],),
 
       // Leakage current
       // Register 30211
       // Scale /10 mA
       leakageCurrent:
-                registers[
-                  DEVICE.LIVE_DATA.OFFSET.LEAKAGE_CURRENT
-                ] / 10,
+                ParserUtils.toInt16(
+            registers[
+              DEVICE.LIVE_DATA.OFFSET.LEAKAGE_CURRENT
+            ],
+          ) / 10,
 
       // Calculated efficiency
       efficiency:

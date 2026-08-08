@@ -1,0 +1,24 @@
+{
+  "id": "work_mode_changed",
+  "title": {
+    "en": "Work mode changed",
+    "nl": "Werkmodus gewijzigd"
+  },
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=goodwe-xs"
+    }
+  ],
+  "tokens": [
+    {
+      "name": "work_mode",
+      "type": "string",
+      "title": {
+        "en": "New work mode",
+        "nl": "Nieuwe werkmodus"
+      }
+    }
+  ]
+}

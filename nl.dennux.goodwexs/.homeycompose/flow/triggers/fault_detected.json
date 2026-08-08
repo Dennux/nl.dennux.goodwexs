@@ -1,0 +1,14 @@
+{
+  "id": "fault_detected",
+  "title": {
+    "en": "Inverter reports a fault",
+    "nl": "Omvormer heeft een storing"
+  },
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=goodwe-xs"
+    }
+  ]
+}
